@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src", //orienta que tudo salvado no src rode
     "target": "es5",
     "lib": [
       "dom",
