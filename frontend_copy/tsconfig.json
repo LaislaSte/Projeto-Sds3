@@ -1,0 +1,39 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "exclude": ["**/node_modules", "**/.*/"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noEmitOnError": true,
+    "jsx": "react-jsxdev",
+    "lib": ["dom", "ES2020"],
+    "allowJs": true,
+    "module": "ES2020",
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "ES2020",
+    "types": [],
+    "useDefineForClassFields": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@assets/*": ["assets/*"],
+      "@contexts/*": ["./src/contexts/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@services/*": ["./src/services/*"]
+    }
+  }
+}
