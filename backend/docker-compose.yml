@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  postgresql_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: secret-pass
+    volumes:
+      - database:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  pgdata:
+
+networks:
+  sales_dashboard_network:
+    driver: bridge

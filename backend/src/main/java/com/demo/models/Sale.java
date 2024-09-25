@@ -2,18 +2,17 @@ package com.demo.models;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_sales")
 public class Sale {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -21,12 +20,12 @@ public class Sale {
 	private Integer deals;
 	private Double amount;
 	private LocalDate date;
-	
-	@ManyToOne
-	@JoinColumn(name = "seller_id")
+
+	@ManyToOne()
 	private Seller seller;
-	
-	public Sale() {}
+
+	public Sale() {
+	}
 
 	public Sale(Long id, Integer visited, Integer deals, Double amount, LocalDate date, Seller seller) {
 		this.id = id;
@@ -133,6 +132,5 @@ public class Sale {
 			return false;
 		return true;
 	}
-	
-}
 
+}
